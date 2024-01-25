@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-    <html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 
     <head>
         <title>read physical event</title>
         <link rel="stylesheet" href="/Css/ReadPhys.css">
     </head>
 
-    <body>
+    <body onload="openForm()">
 
-        <div class="openBtn">
-            <button class="openButton" onclick="openForm()"><strong>Open Form</strong></button>
-        </div>
+
         <div class="readPopup">
             <div class="formPopup" id="popupForm">
                 <div class="demo">
-                    <button type="button" class="cls_btn" onclick="closeForm()"><img src="/Images/close.png"/></button>
-
+                    <a href="/events" class="cls_btn"><img src="/Images/close.png"/></a>
                 </div>
 
                 <div class="formContainer">
@@ -41,22 +38,23 @@
                                 
                             </div>
                             <div id="nameev"class="nameev">
-                                <p class="ev-name" id="edit3">EVENT NAME</p>
+                                <p class="ev-name" id="edit3"  th:text="${event.eventName}"> </p>
                             </div>
 
                             <table class="ev-details">
                                 <tr>
-                                    <td>
-                                        <label >Category:</label>
+                                    <td >
+                                        <label >Category:<p th:text="${event.category}"> </p></label >
                                     </td>
                                     <td id="n1" class="n1">
-                                        <p class="edit" id="edit">State</p>
+                                        <p class="edit" id="edit">State: <p th:text="${event.state}"></p></p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <p id="Category">Physical</p>
                                         <p id="desc">Event Description</p>
+                                        <p th:text="${event.Location_description}"></p>
                                     </td>
                                     <th>
                                         

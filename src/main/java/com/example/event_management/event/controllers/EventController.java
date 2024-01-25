@@ -102,7 +102,21 @@ event_service.saveEvent(event);
 
 
 
+    @GetMapping("/details/{id}")
+    public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
 
+        // get employee from the service
+        Event event = event_service.getEventById(id);
+
+        // set employee as a model attribute to pre-populate the form
+        model.addAttribute("event", event);
+
+        if (event.getPhysical() == true) {
+            return "ReadPhysical";
+        } else { // Closing brace added here
+            return "ReadVirtual";
+        }
+    }
 
 
 
