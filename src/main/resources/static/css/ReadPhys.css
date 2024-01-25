@@ -1,0 +1,230 @@
+body {
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    color: #333;
+    /* Dark gray text */
+    margin: 0;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .formPopup {
+    
+    overflow: hidden;
+    display: none;
+        position: absolute;
+        left: 45%;
+        top: 5%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+  }
+  
+  .formContainer {
+    margin-left: 30px;
+    width: 500px;
+    padding: 10px;
+    background-color: #fff;
+  }
+  /*Close Button Style*/
+  .demo{
+    position: relative;
+    }
+    .cls_btn {
+      background-color: transparent;
+      border: 0;
+      position: absolute;
+      right: 5px;
+      top:10px;
+      cursor: pointer;
+    }
+    .cls_btn img{     
+      height: 20px;
+      width: 20px;
+    }
+
+    /*NEW EVENT BTN CUSTOMIZATION*/
+  .newevent-btn {
+    background-color: transparent;
+    border: 0;
+    margin: 20px;
+    margin-left: 50px;
+    cursor: pointer;
+    color: #02366d;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .startdate {
+    display: flex;
+    margin-right: 20px;
+  
+  }
+  
+  
+  /*Section Division*/
+  section {
+    margin-bottom: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  /*Cover Photo*/
+  .bg {
+    height: 200px;
+    width: 400px;
+  }
+  .layer1 {
+    position: relative;
+  
+  } 
+  /*Section 2 for all the details*/
+  .section2 {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .readPopup label {
+    font-weight: bold;
+    color:#02366d;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .readPopup input{
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  /*open form button*/
+  .openBtn {
+    display: flex;
+    justify-content: left;
+  }
+  
+  .readPopup {
+    position: absolute;
+    width: 100%;
+  }
+  
+
+/*Event Time Details*/
+.start-date-time {
+    display: block;
+    justify-content: space-between;
+  }
+  .div-btn{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  
+  }
+  .startdate img{
+    padding-right: 10px;
+  }
+  .appdate{
+    padding-left: 40px;
+  }
+  .ed{
+    height: 20px;
+  }
+/*Event Name*/
+  .nameev {
+    display: flex;
+    align-items: baseline;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 300px;
+    border: 0;
+    background-color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    color: #024892;
+  }
+
+  /*Event Details*/
+  .ev-details{
+    padding-top: 1%;
+  }
+  .ev-details input{
+    width:100px;
+    border: 0;
+    background-color: #fff;
+  }
+  /*Table Style and customization*/ 
+  td{
+    display:table-cell;
+    height: 10px;
+    vertical-align:middle;
+  }
+  .n1{
+    align-items: baseline;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: inline-flex; 
+    height: 50px;
+    width: 250px;
+    gap: 10px;
+    vertical-align:top;
+  }
+  
+  .n1 input {
+    resize: none;
+    width: 30px;
+    height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+
+  th{ 
+    display: inline-block;
+  }
+  
+  .layere2{
+    align-items: baseline;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: inline-flex; 
+    height: 48px;
+    width: 250px;
+  }
+  /*Participate button customization*/
+  .participate-button {
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    text-size-adjust: 18px ;
+  justify-content: center;}
+  
+  
+
+  
+
+  

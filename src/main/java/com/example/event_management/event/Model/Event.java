@@ -4,6 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "event")
@@ -21,13 +22,13 @@ public class Event {
     private Date startDate;
 
     @Temporal(TemporalType.TIME)
-    private Time startTime;
+    private LocalTime startTime;
 
     private String category;
 
-    private boolean isPhysical;
+    private boolean Physical;
     private  String coverPicture;
-    private boolean isinside;
+    private String  inside;
 
     private String app;
     private String link;
@@ -107,11 +108,11 @@ public class Event {
         this.startDate = startDate;
     }
 
-    public Time getStartTime() {
+    public LocalTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Time startTime) {
+    public void setStartTime(LocalTime startTime) {
         this.startTime = startTime;
     }
 
@@ -123,15 +124,15 @@ public class Event {
         this.category = category;
     }
 
-    public boolean isPhysical() {
-        return isPhysical;
+    public boolean getPhysical() {
+        return Physical;
     }
 
     public void setPhysical(boolean physical) {
-        isPhysical = physical;
+        Physical = physical;
     }
 
-   public String getCoverPicture() {
+    public String getCoverPicture() {
         return coverPicture;
     }
 
@@ -139,12 +140,12 @@ public class Event {
         this.coverPicture = coverPicture;
     }
 
-    public boolean isIsinside() {
-        return isinside;
+    public String getInside() {
+        return inside;
     }
 
-    public void setIsinside(boolean isinside) {
-        this.isinside = isinside;
+    public void setInside(String inside) {
+        this.inside = inside;
     }
 
     public String getApp() {

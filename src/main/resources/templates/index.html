@@ -6,4 +6,15 @@
 <header>
     <h1>event list </h1>
 </header> <main>
-    <table>         <tr th:each="event : ${listEvents}">             <th th:text="${event.id}"></th>             <th>Contact</th>             <th>Country</th>         </tr>         <tr>             <td>Alfreds Futterkiste</td>             <td>Maria Anders</td>             <td>Germany</td>         </tr>         <tr>             <td>Centro comercial Moctezuma</td>             <td>Francisco Chang</td>             <td>Mexico</td>         </tr>     </table>   </main> </body> </html>
+    <table>         <tr th:each="event : ${listEvents}">
+        <th th:text="${event.id}"></th>
+        <th>Contact</th>
+        <th>Country</th>
+    </tr>         <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+    </tr>         <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>             <td>Mexico</td>         </tr>     </table>   </main> </body> </html>
+

@@ -42,7 +42,7 @@ public class EventController {
     public String showCreatePage (Model model) {
         EventDto eventDto = new EventDto ();
         model.addAttribute("eventDto", eventDto);
-        return "ListEvents";
+        return "create_event";
     }
     @PostMapping("/create")
     public String createProduct (
@@ -54,11 +54,11 @@ public class EventController {
         }
 
     // save image file
-        MultipartFile image=eventDto.getCoverPicture();
+        MultipartFile image = eventDto.getCoverPicture();
 
         String storageFileName =  image.getOriginalFilename ();
         try {
-            String uploadDir = "static/uploaded_images/";
+            String uploadDir = "src/main/resources/static/uploaded_images/";
             Path uploadPath = Paths.get(uploadDir);
             if (!Files.exists(uploadPath)) {
                 Files.createDirectories (uploadPath);
@@ -71,20 +71,33 @@ public class EventController {
         }
 
 
-        if (result.hasErrors()) {
-            return "CreateEvent" ;
-        }
+       if (result.hasErrors()) {
+           return "CreateEvent";
 
+       }
 
 
         Event event = new Event();
-        ///////
+
+        event.setEventName(eventDto.getEventName());
+        event.setEventDescription(eventDto.getEventDescription());
+        event.setStartDate(eventDto.getStartDate());
+        event.setStartTime(eventDto.getStartTime());
+        event.setCategory(eventDto.getCategory());
+        event.setPhysical(eventDto.getPhysical());
+        event.setInside(eventDto.getInside());
+        event.setApp(eventDto.getApp());
+        event.setLink(eventDto.getLink());
+        event.setState(eventDto.getState());
+        event.setPlace_name(eventDto.getPlace_name());
+        event.setLocation_link(eventDto.getLocation_link());
+        event.setLocation_description(eventDto.getLocation_description());
+        event.setCoverPicture(storageFileName);
 
 
+event_service.saveEvent(event);
 
-
-
-        return "index";
+        return "create_event";
     }
 
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>read physical event</title>
+        <link rel="stylesheet" href="/Css/ReadPhys.css">
+    </head>
+
+    <body>
+
+        <div class="openBtn">
+            <button class="openButton" onclick="openForm()"><strong>Open Form</strong></button>
+        </div>
+        <div class="readPopup">
+            <div class="formPopup" id="popupForm">
+                <div class="demo">
+                    <button type="button" class="cls_btn" onclick="closeForm()"><img src="../Images/close.png"/></button>
+
+                </div>
+
+                <div class="formContainer">
+                    <div class="Newevent">
+                        <button class="newevent-btn" onclick="openForm()"><strong>+ Create New Event</strong></button>
+                    </div>
+                    <section class="cover-picture">
+                        <div class="container-row">
+                            <div class="layer1">
+                                <img src="../Images/im1.png" class="bg">
+                            </div>
+                        </div>
+
+                        <div class="section2">
+                            <div class="start-date-time">
+                                <div class="startdate">
+                                    <img src="../Images/date.png" id="dt" class="dt">
+                                    <label>DATE +  AT  + Time</label> 
+                                </div>
+                                <div class="appdate">
+                                    <label class="app-type">Place Name</label>
+                                </div>
+                                
+                            </div>
+                            <div id="nameev"class="nameev">
+                                <p class="ev-name" id="edit3">EVENT NAME</p>
+                            </div>
+
+                            <table class="ev-details">
+                                <tr>
+                                    <td>
+                                        <label >Category:</label>
+                                    </td>
+                                    <td id="n1" class="n1">
+                                        <p class="edit" id="edit">State</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p id="Category">Physical</p>
+                                        <p id="desc">Event Description</p>
+                                    </td>
+                                    <th>
+                                        
+                                        <div class="layere1"><label ></label></div>
+                                        <div id="layere2" class="layere2"><p class="edit" id="edit2">Place Name</p>
+                                    </th>
+                                </tr>
+
+
+                            </table>
+                            <h4>Organized By Club Name</h4>
+                        </div>
+                        <div class="div-btn">
+                            <button class="participate-button">Participate</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <script>
+            function openForm() {
+                document.getElementById("popupForm").style.display = "block";
+            }
+            function closeForm() {
+                document.getElementById("popupForm").style.display = "none";
+            }
+            
+        </script>
+
+    </body>
+
+    </html>     

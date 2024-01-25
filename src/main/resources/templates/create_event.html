@@ -1,62 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>Event Listing</title>
+    <link rel="stylesheet" href="/css/ListEvents.css">
+    <link rel="stylesheet" href="/css/page1.css">
+    <link rel="stylesheet" href="/css/page2.css">
+    <link rel="stylesheet" href="/css/page3.css">
+    <link rel="stylesheet" href="/css/page4.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Radio Form</title>
-    <style>
-        .sub-form {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
-<body>
-<h1>Create Event!</h1>
+<body onload="openForm()">
 
-<form id="main-form">
-    <p>Is it physically or virtual?</p>
-    <label for="option1">
-        <input type="radio" name="option" id="option1" value="1"> Physically
-    </label>
-    <label for="option2">
-        <input type="radio" name="option" id="option2" value="2"> Virtual
-    </label>
-
-    <div id="sub-forms">
-        <div class="sub-form" id="form1">
-            <p>Sub-form 1 fields...</p>
-            <input type="text" name="sub_form1_field1" required>
-            <input type="email" name="sub_form1_field2" required>
-        </div>
-        <div class="sub-form" id="form2">
-            <label for="app">App:</label>
-            <input type="text" id="app" name="app" required>
-            <br>
-            <label for="link">Link:</label>
-            <input type="text" id="link" name="link" required>
-        </div>
+<nav>
+    <div class="menu-icon">
+        <span class="fas fa-bars"></span>
+    </div>
+    <div class="logo">
+        Eventify
+    </div>
+    <div class="nav-items">
+        <li><a href="#">Home</a></li>
+        <li>
+            <div class="dropdown">
+                <button class="dropbtn">Category
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button class="dropbtn">Region
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </li>
+        <li><a href="#">Date</a></li>
+        <li>
+            <div class="openBtn">
+                <button class="openButton" onclick="openForm()"><strong>Create Event</strong></button>
+            </div>
+        </li>
+    </div>
+    <div class="search-icon">
+        <span class="fas fa-search"></span>
+    </div>
+    <div class="cancel-icon">
+        <span class="fas fa-times"></span>
     </div>
 
-    <button type="submit">Submit Form</button>
+        <input type="search" class="search-data" placeholder="Search" required>
+        <button type="submit" class="fas fa-search"></button>
+
+</nav>
+
+<form action="/events/create" method="POST"  enctype="multipart/form-data" th:object="${eventDto}">
+<!-- Event Creation Page 1 -->
+<div class="loginPopup">
+    <div class="formPopup" id="popupForm">
+        <div class="demo">
+            <button type="button" class="cls_btn" onclick="closeForm()"><img src="/Images/close.png"/></button>
+        </div>
+
+        <div class="formContainer">
+            <section class="cover-picture">
+                <h1>Club name</h1>
+                <h2>Add cover picture</h2>
+                <div class="container-row">
+                    <div class="layer1">
+                        <img src="/Images/im1.png" class="bg">
+                    </div>
+
+                    <div class="layer2">
+                        <label for="cover-picture-input"><img src="/Images/plus.png" /> </label>
+                        <input type="file" id="cover-picture-input" class="image" th:field="${eventDto.coverPicture}">
+                    </div>
+                </div>
+
+                <div class="section2">
+                    <label for="event-name">Event name:</label>
+                    <input type="text" id="event-name" placeholder="Event Name" th:field="${eventDto.eventName}">
+                    <div class="start-date-time">
+                        <div class="startdate">
+                            <label for="start-date">Start date:</label>
+                            <input type="date" id="start-date" th:field="${eventDto.startDate}">
+                        </div>
+                        <div class="startdate">
+                            <label for="start-time">Start time:</label>
+                            <input type="time" id="start-time" th:field="*{startTime}" th:value="${eventDto.startTime}" pattern="HH:mm">
+
+                        </div>
+                    </div>
+                    <label for="category">Category:</label>
+                    <select id="category" th:field="${eventDto.category}">
+                        <option value="artistic">Artistic</option>
+                        <option value="music">Music</option>
+                    </select>
+                    <label for="event-description">Event description:</label>
+                    <textarea id="event-description" th:field="${eventDto.eventDescription}"></textarea>
+                    <label for="event-type">Is it physical or virtual?</label>
+                    <select id="event-type" th:field="${eventDto.Physical}">
+                        <option th:value="true" selected>Physical</option>
+                        <option th:value="false">Virtual</option>
+                    </select>
+
+                </div>
+                <div class="div-btn">
+                    <input  type="button"  value="Next" class="next-button" onclick="openForm2()">
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Event Creation Page 2 -->
+
+<div class="loginPopup2">
+    <div class="formPopup2" id="popupForm2">
+        <div class="demo2">
+            <button type="button" class="cls_btn2" onclick="closeForm2()"><img src="/Images/close.png"/></button>
+        </div>
+
+        <div class="formContainer2">
+            <section class="sec1_2">
+                <label for="app">Which application will you use:</label>
+                <input type="text" placeholder="Zoom.." id="app" th:field="${eventDto.app}">
+                <label for="link">Put the Link:</label>
+                <input type="text" placeholder="Link.." id="link"  th:field="${eventDto.link}">
+                <div class="div-btn2">
+                    <button TYPE="submit" class="Publish-btn2">Publish</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Event Creation Page 3 -->
+<div class="loginPopup3">
+    <div class="formPopup3" id="popupForm3">
+        <div class="demo3">
+            <button type="button" class="cls_btn3" onclick="closeForm3()"><img src="/Images/close.png"/></button>
+        </div>
+
+        <div class="formContainer3">
+            <section class="sec1_3">
+                <label class="ide3">Is The Event:</label>
+                <div class="boxes3">
+                    <input type="checkbox" th:value="true" th:field="${eventDto.inside}" id="inside-checkbox">
+                    <label for="inside-checkbox">Inside the Campus</label>
+
+                    <input type="checkbox" th:value="false" th:field="${eventDto.inside}" id="outside-checkbox">
+                    <label for="outside-checkbox">Outside the Campus</label>
+
+                </div>
+                <div class="div-btn3">
+                    <input  type="button"  value="Next" class="next-button3" onclick="openForm4()">
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Event Creation Page 4 -->
+<div class="loginPopup4">
+    <div class="formPopup4" id="popupForm4">
+        <div class="demo4">
+            <button type="button" class="cls_btn4" onclick="closeForm4()"><img src="/Images/close.png"/></button>
+        </div>
+        <section>
+            <div class="formContainer4">
+                <div class="section2">
+                    <label for="State">State:</label>
+                    <input type="text" id="State" placeholder="Choose your State.." th:field="${eventDto.state}">
+                    <label for="Place Name">Place Name:</label>
+                    <input type="text" id="Place Name" placeholder="Write the place name.." th:field="${eventDto.Place_name}">
+                    <label for="loc-link">Location Link:</label>
+                    <input type="text" id="loc-link" placeholder="Link google maps" th:field="${eventDto.Location_link}">
+                    <label for="loc-desc">Location Description (Optional):</label>
+                    <input type="text" id="loc-desc" placeholder="Describe the Location .." th:field="${eventDto.Location_description}">
+                </div>
+                <div class="div-btn4">
+                    <button type="submit" class="Publish-btn4">Publish</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
 </form>
 
 <script>
-    const radioButtons = document.querySelectorAll('input[type="radio"]');
-    const subForms = document.querySelectorAll('.sub-form');
-
-    for (const radioButton of radioButtons) {
-        radioButton.addEventListener('change', () => {
-            const selectedValue = radioButton.value;
-
-            for (const subForm of subForms) {
-                if (subForm.id === `form${selectedValue}`) {
-                    subForm.style.display = 'block';
-                } else {
-                    subForm.style.display = 'none';
-                }
-            }
-        });
+    function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+        document.getElementById("popupForm2").style.display = "none";
+        document.getElementById("popupForm3").style.display = "none";
+        document.getElementById("popupForm4").style.display = "none";
+    }
+    function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+    }
+    function openForm2() {
+        if(document.getElementById("event-type").value=="false"){
+        document.getElementById("popupForm2").style.display = "block";
+        document.getElementById("popupForm").style.display = "none";
+        }else{
+        document.getElementById("popupForm3").style.display = "block";
+        document.getElementById("popupForm").style.display = "none";
+        }
+    }
+    function closeForm2() {
+        document.getElementById("popupForm2").style.display = "none";
+    }
+    function openForm3() {
+        document.getElementById("popupForm3").style.display = "block";
+    }
+    function closeForm3() {
+        document.getElementById("popupForm3").style.display = "none";
+    }
+    function openForm4() {
+        document.getElementById("popupForm4").style.display = "block";
+        document.getElementById("popupForm3").style.display = "none";
+    }
+    function closeForm4() {
+        document.getElementById("popupForm4").style.display = "none";
     }
 </script>
+
+
+<script>
+    const menuBtn = document.querySelector(".menu-icon span");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const items = document.querySelector(".nav-items");
+    const form = document.querySelector("form");
+
+    menuBtn.onclick = () => {
+        items.classList.add("active");
+        menuBtn.classList.add("hide");
+        searchBtn.classList.add("hide");
+        cancelBtn.classList.add("show");
+    };
+
+    cancelBtn.onclick = () => {
+        items.classList.remove("active");
+        menuBtn.classList.remove("hide");
+        searchBtn.classList.remove("hide");
+        cancelBtn.classList.remove("show");
+        form.classList.remove("active");
+        cancelBtn.style.color = "#ff3d00";
+    };
+
+    searchBtn.onclick = () => {
+        form.classList.add("active");
+        searchBtn.classList.add("hide");
+        cancelBtn.classList.add("show");
+    };
+</script>
+
 </body>
 </html>

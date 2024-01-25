@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml">
    <head>
       <meta charset="utf-8">
       <title>Event Listing</title>
       <link rel="stylesheet" href="/css/ListEvents.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
    </head>
    <body>
       <nav>
@@ -45,7 +49,7 @@
             <li><a href="#">Date</a></li>
 
             <li><div class="openBtn">
-            <button class="openButton" onclick="openForm()"><strong>Create Event</strong></button>
+            <button class="openButton" ><strong> <a href="/events/create">Create Event</a></strong></button>
         </div></a></li>
          </div>
          <div class="search-icon">
@@ -59,24 +63,24 @@
             <button type="submit" class="fas fa-search"></button>
          </form>
       </nav>
-      
+
 
       <!DOCTYPE html>
       <html>
-      
+
       <head>
           <title>Event Creation Page</title>
           <link rel="stylesheet" href="/css/page1.css">
       </head>
-      
+
       <body>
           <div class="loginPopup">
               <div class="formPopup" id="popupForm">
                   <div class="demo">
                       <button type="button" class="cls_btn" onclick="closeForm()"><img src="/Images/close.png"/></button>
-      
+
                   </div>
-      
+
                   <div class="formContainer">
                       <section class="cover-picture">
                           <h1>Club name</h1>
@@ -89,9 +93,9 @@
                                   <label for="cover-picture-input"><img src="/Images/plus.png" /> </label>
                                   <input type="file" id="cover-picture-input" class="image">
                               </div>
-      
+
                           </div>
-      
+
                           <div class="section2">
                               <label for="event-name">Event name:</label>
                               <input type="text" id="event-name" placeholder="Event Name" >
@@ -101,8 +105,8 @@
                                       <input type="date" id="start-date">
                                   </div>
                                   <div class="startdate">
-      
-      
+
+
                                       <label for="start-time">Start time:</label>
                                       <input type="time" id="start-time">
                                   </div>
@@ -122,29 +126,29 @@
                           </div>
                           <div class="div-btn">
                               <button class="next-button" onclick="openForm2()">Next</button>
-      
+
                           </div>
                       </section>
                   </div>
               </div>
           </div>
-      
-      
+
+
           <!DOCTYPE html>
       <html>
-      
+
       <head>
           <title>second Creation Page</title>
           <link rel="stylesheet" href="/css/page2.css">
       </head>
-      
+
       <body>
               <div class="loginPopup2">
                   <div class="formPopup2" id="popupForm2">
                       <div class="demo2">
                           <button type="button" class="cls_btn2" onclick="closeForm2()"><img src="/Images/close.png"/></button>
                       </div>
-      
+
                       <div class="formContainer2">
                           <section class="sec1_2">
                                   <label for="app">Which application you're going to use :</label>
@@ -160,35 +164,35 @@
                   </div>
               </div>
           </div>
-      
+
       </body>
-      
+
       </html>
-      
-      
-      
+
+
+
       <!DOCTYPE html>
       <html>
-      
+
       <head>
           <title>third Creation Page</title>
           <link rel="stylesheet" href="/css/page3.css">
       </head>
-      
+
       <body>
               <div class="loginPopup3">
                   <div class="formPopup3" id="popupForm3">
                       <div class="demo3">
                           <button type="button" class="cls_btn3" onclick="closeForm3()"><img src="/Images/close.png"/></button>
                       </div>
-      
+
                       <div class="formContainer3">
                           <section class="sec1_3">
                                   <label class="ide3">Is The Event :</label>
                                   <div class="boxes3">
                                       <input type="checkbox" value="Inside" id="i"> <label for="i"> Inside the Campus</label>
                                       <input type="checkbox" value="Outside" id="o"><label for="o"> Outside the Campus</label>
-                                  </div>                            
+                                  </div>
                               <div class="div-btn3">
                                   <button class="next-button3" onclick="openForm4()">Next</button>
                               </div>
@@ -197,27 +201,27 @@
                   </div>
               </div>
           </div>
-      
+
       </body>
-      
+
       </html>
-      
-      
+
+
       <!DOCTYPE html>
       <html>
-      
+
       <head>
           <title>Event Creation Page</title>
           <link rel="stylesheet" href="/css/page4.css">
       </head>
-      
+
       <body>
-      
+
           <div class="loginPopup4">
               <div class="formPopup4" id="popupForm4">
                   <div class="demo4">
                       <button type="button" class="cls_btn4" onclick="closeForm4()"><img src="/Images/close.png"/></button>
-      
+
                   </div>
                   <section>
                   <div class="formContainer4">
@@ -233,21 +237,21 @@
                           </div>
                           <div class="div-btn4">
                               <button class="Publish-btn4">Publish</button>
-      
+
                           </div>
                       </div>
               </section>
               </div>
           </div>
           <script>
-              
+
           </script>
-      
+
       </body>
-      
+
       </html>
-      
-      
+
+
           <script>
               function openForm() {
                   document.getElementById("popupForm").style.display = "block";
@@ -281,25 +285,60 @@
                   document.getElementById("popupForm4").style.display = "none";
               }
           </script>
-      
+
       </body>
-      
+
       </html>
 
-    <div class="content">
-         <div class="space text">
-            Content
 
 
-            <div class="Popular-events">
-                Popular Events
-            </div>
-            
-            <div class="Artistic">
-                Artistic Events
-            </div>
-         </div>
+      <div class="content">
+          <div class="space text">
+              Content
+
+
+
+
+              <div class="container" >
+                  <div class="row">
+                  <div class="col-md-4" th:each="event : ${listEvents}">
+                      <div class="card">
+                          <img th:src="@{'/uploaded_images/' + ${event.coverPicture}}" class="card-img-top" alt="Product 3" width="150px" height="px">
+                          <div class="card-body">
+                              <h5 class="card-title" th:text="${event.eventName}"></h5>
+                              <p class="card-text" th:text="${event.eventDescription}" ></p>
+                              <a href="#" class="btn btn-primary">View Details</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+              <!--
+              <div class="small-container">
+                  <div class="row">
+
+                      <div  th:each="event : ${listEvents}" class="col-4">
+                          <img th:src="@{'/static/uploaded_images/' + ${event.coverPicture}}"   width="100">
+                          <h4 th:text="${event.id}"></h4>
+                          <div class="addtocartcontainer" style="display: flex; justify-content: left; align-items: center;">
+                              <button class="add" data-id="${event.id}" style="background-color:white; margin-right:9px; padding-top:4px; padding-right:3px; padding-left:3px; border:1px solid black;"></button>
+                              <p style="font-weight: 500;">Add to Cart</p>
+                          </div>
+                          <p th:text="${event.id}"></p>
+                      </div>
+                  </div>
+              </div>
+                    -->
+              <div class="Popular-events">
+                  Popular Events
+              </div>
+
+              <div class="Artistic">
+                  Artistic Events
+              </div>
+          </div>
       </div>
+
       <script>
          const menuBtn = document.querySelector(".menu-icon span");
          const searchBtn = document.querySelector(".search-icon");

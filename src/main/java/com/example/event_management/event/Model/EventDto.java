@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalTime;
 
 public class EventDto {
 
@@ -19,13 +20,13 @@ public class EventDto {
     private Date startDate;
 
     @Temporal(TemporalType.TIME)
-    private Time startTime;
+    private LocalTime startTime;
 
     private String category;
 
-    private boolean isPhysical;
+    private boolean Physical;
     private MultipartFile coverPicture;
-    private boolean isinside;
+    private String inside;
 
     private String app;
     private String link;
@@ -60,11 +61,11 @@ public class EventDto {
         this.startDate = startDate;
     }
 
-    public Time getStartTime() {
+    public LocalTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Time startTime) {
+    public void setStartTime(LocalTime startTime) {
         this.startTime = startTime;
     }
 
@@ -76,12 +77,13 @@ public class EventDto {
         this.category = category;
     }
 
-    public boolean isPhysical() {
-        return isPhysical;
+
+    public boolean getPhysical() {
+        return Physical;
     }
 
     public void setPhysical(boolean physical) {
-        isPhysical = physical;
+        Physical = physical;
     }
 
     public MultipartFile getCoverPicture() {
@@ -92,12 +94,12 @@ public class EventDto {
         this.coverPicture = coverPicture;
     }
 
-    public boolean isIsinside() {
-        return isinside;
+    public String getInside() {
+        return inside;
     }
 
-    public void setIsinside(boolean isinside) {
-        this.isinside = isinside;
+    public void setInside(String inside) {
+        this.inside = inside;
     }
 
     public String getApp() {
