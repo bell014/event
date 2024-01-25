@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 
     <head>
         <title>read event</title>
@@ -18,12 +18,12 @@
 
                 <div class="formContainer">
                     <div class="Newevent">
-                        <button class="newevent-btn" onclick="openForm()"><strong>+ Create New Event</strong></button>
+                        <a href="/events/create" class="newevent-btn"><strong>+ Create New Event</strong></a>
                     </div>
                     <section class="cover-picture">
                         <div class="container-row">
                             <div class="layer1">
-                                <img src="/Images/im1.png" class="bg">
+                                <img th:src="@{'/uploaded_images/' + ${event.coverPicture}}" class="bg">
                             </div>
                         </div>
 
@@ -31,41 +31,42 @@
                             <div class="start-date-time">
                                 <div class="startdate">
                                     <img src="/Images/date.png" id="dt" class="dt">
-                                    <label>DATE +  AT  + Time</label> 
+                                    <h3 th:text="${event.startDate}"></h3>
+                                    <h2>&ensp;</h2>
+                                    <h4 th:text="${event.startTime}"></h4>
                                 </div>
-                                <div class="appdate">
-                                    <label class="app-type">Via + App</label>
-                                </div>
+
                                 
                             </div>
                             <div id="nameev"class="nameev">
-                                <p class="ev-name" id="edit3">EVENT NAME</p>
+                                <p class="ev-name" id="edit3"  th:text="${event.eventName}"> </p>
                             </div>
 
                             <table class="ev-details">
                                 <tr>
                                     <td>
-                                        <label >Category:</label>
+                                        <label >Category:<p th:text="${event.category}"> </p></label >
                                     </td>
                                     <td id="n1" class="n1">
-                                        <label id="end-editing">We Will meet in</label><p class="edit" id="edit">APP</p>
+                                        <label id="end-editing">We Will meet in</label><p class="edit" id="edit" th:text="${event.app}"></p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <p id="Category">Virtual</p>
-                                        <p id="desc">Event Description</p>
+                                        <p >Event Description :</p>
+                                        <p th:text="${event.Location_description}"></p>
                                     </td>
                                     <th>
                                         
                                         <div class="layere1"><label >App Link</label></div>
-                                        <div id="layere2" class="layere2"><a href="" class="edit" id="edit2">Link</a>
+                                        <div id="layere2" class="layere2"><a href="" class="edit" id="edit2" th:text="${event.link}"></a>
                                     </th>
                                 </tr>
 
 
                             </table>
-                            <h4>Organized By Club Name</h4>
+
                         </div>
                         <div class="div-btn">
                             <button class="participate-button">Participate</button>

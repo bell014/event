@@ -17,12 +17,13 @@
 
                 <div class="formContainer">
                     <div class="Newevent">
-                        <button class="newevent-btn" onclick="openForm()"><strong>+ Create New Event</strong></button>
+
+                        <a href="/events/create" class="newevent-btn"><strong>+ Create New Event</strong></a>
                     </div>
                     <section class="cover-picture">
                         <div class="container-row">
                             <div class="layer1">
-                                <img src="/Images/im1.png" class="bg">
+                                <img th:src="@{'/uploaded_images/' + ${event.coverPicture}}" class="bg">
                             </div>
                         </div>
 
@@ -30,10 +31,12 @@
                             <div class="start-date-time">
                                 <div class="startdate">
                                     <img src="/Images/date.png" id="dt" class="dt">
-                                    <label>DATE +  AT  + Time</label> 
+                                    <h3 th:text="${event.startDate}"></h3>
+                                    <h2>&ensp;</h2>
+                                    <h4 th:text="${event.startTime}"></h4>
                                 </div>
                                 <div class="appdate">
-                                    <label class="app-type">Place Name</label>
+                                    <label class="app-type">Place Name: <p th:text="${event.Place_name}"> </p></label>
                                 </div>
                                 
                             </div>
@@ -53,19 +56,19 @@
                                 <tr>
                                     <td>
                                         <p id="Category">Physical</p>
-                                        <p id="desc">Event Description</p>
+                                        <p id="desc">Event Description :</p>
                                         <p th:text="${event.Location_description}"></p>
                                     </td>
                                     <th>
                                         
                                         <div class="layere1"><label ></label></div>
-                                        <div id="layere2" class="layere2"><p class="edit" id="edit2">Place Name</p>
+                                        <div id="layere2" class="layere2"><h4 class="edit" id="edit2"> google map </h4>
                                     </th>
                                 </tr>
 
 
                             </table>
-                            <h4>Organized By Club Name</h4>
+
                         </div>
                         <div class="div-btn">
                             <button class="participate-button">Participate</button>
