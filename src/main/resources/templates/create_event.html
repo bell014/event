@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Radio Form</title>
+    <style>
+        .sub-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Create Event!</h1>
+
+<form id="main-form">
+    <p>Is it physically or virtual?</p>
+    <label for="option1">
+        <input type="radio" name="option" id="option1" value="1"> Physically
+    </label>
+    <label for="option2">
+        <input type="radio" name="option" id="option2" value="2"> Virtual
+    </label>
+
+    <div id="sub-forms">
+        <div class="sub-form" id="form1">
+            <p>Sub-form 1 fields...</p>
+            <input type="text" name="sub_form1_field1" required>
+            <input type="email" name="sub_form1_field2" required>
+        </div>
+        <div class="sub-form" id="form2">
+            <label for="app">App:</label>
+            <input type="text" id="app" name="app" required>
+            <br>
+            <label for="link">Link:</label>
+            <input type="text" id="link" name="link" required>
+        </div>
+    </div>
+
+    <button type="submit">Submit Form</button>
+</form>
+
+<script>
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    const subForms = document.querySelectorAll('.sub-form');
+
+    for (const radioButton of radioButtons) {
+        radioButton.addEventListener('change', () => {
+            const selectedValue = radioButton.value;
+
+            for (const subForm of subForms) {
+                if (subForm.id === `form${selectedValue}`) {
+                    subForm.style.display = 'block';
+                } else {
+                    subForm.style.display = 'none';
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

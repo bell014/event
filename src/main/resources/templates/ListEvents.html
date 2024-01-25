@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Event Listing</title>
+      <link rel="stylesheet" href="/css/ListEvents.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav>
+         <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+         </div>
+         <div class="logo">
+            Eventify
+         </div>
+         <div class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><div class="dropdown">
+                <button class="dropbtn">Category
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+            </li>
+
+
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Region
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </div>
+            </li>
+            <li><a href="#">Date</a></li>
+
+            <li><div class="openBtn">
+            <button class="openButton" onclick="openForm()"><strong>Create Event</strong></button>
+        </div></a></li>
+         </div>
+         <div class="search-icon">
+            <span class="fas fa-search"></span>
+         </div>
+         <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+         </div>
+         <form action="#">
+            <input type="search" class="search-data" placeholder="Search" required>
+            <button type="submit" class="fas fa-search"></button>
+         </form>
+      </nav>
+      
+
+      <!DOCTYPE html>
+      <html>
+      
+      <head>
+          <title>Event Creation Page</title>
+          <link rel="stylesheet" href="/css/page1.css">
+      </head>
+      
+      <body>
+          <div class="loginPopup">
+              <div class="formPopup" id="popupForm">
+                  <div class="demo">
+                      <button type="button" class="cls_btn" onclick="closeForm()"><img src="/Images/close.png"/></button>
+      
+                  </div>
+      
+                  <div class="formContainer">
+                      <section class="cover-picture">
+                          <h1>Club name</h1>
+                          <h2>Add cover picture</h2>
+                          <div class="container-row">
+                              <div class="layer1">
+                                  <img src="/Images/im1.png" class="bg">
+                              </div>
+                              <div class="layer2">
+                                  <label for="cover-picture-input"><img src="/Images/plus.png" /> </label>
+                                  <input type="file" id="cover-picture-input" class="image">
+                              </div>
+      
+                          </div>
+      
+                          <div class="section2">
+                              <label for="event-name">Event name:</label>
+                              <input type="text" id="event-name" placeholder="Event Name" >
+                              <div class="start-date-time">
+                                  <div class="startdate">
+                                      <label for="start-date">Start date:</label>
+                                      <input type="date" id="start-date">
+                                  </div>
+                                  <div class="startdate">
+      
+      
+                                      <label for="start-time">Start time:</label>
+                                      <input type="time" id="start-time">
+                                  </div>
+                              </div>
+                              <label for="category">Category:</label>
+                              <select id="category">
+                                  <option value="artistic">Artistic</option>
+                                  <option value="music">Music</option>
+                              </select>
+                              <label for="event-description">Event description:</label>
+                              <textarea id="event-description"></textarea>
+                              <label for="event-type">Is it physically or virtual?</label>
+                              <select id="event-type">
+                                  <option value="P">Physically</option>
+                                  <option value="V">Virtual</option>
+                              </select>
+                          </div>
+                          <div class="div-btn">
+                              <button class="next-button" onclick="openForm2()">Next</button>
+      
+                          </div>
+                      </section>
+                  </div>
+              </div>
+          </div>
+      
+      
+          <!DOCTYPE html>
+      <html>
+      
+      <head>
+          <title>second Creation Page</title>
+          <link rel="stylesheet" href="/css/page2.css">
+      </head>
+      
+      <body>
+              <div class="loginPopup2">
+                  <div class="formPopup2" id="popupForm2">
+                      <div class="demo2">
+                          <button type="button" class="cls_btn2" onclick="closeForm2()"><img src="/Images/close.png"/></button>
+                      </div>
+      
+                      <div class="formContainer2">
+                          <section class="sec1_2">
+                                  <label for="app">Which application you're going to use :</label>
+                                  <input type="text" placeholder="Zoom.." id="app">
+                                  </select>
+                                  <label for="link">Put the Link</label>
+                                  <input type="text" placeholder="Link.." id="link">
+                              <div class="div-btn2">
+                                  <button class="Publish-btn2">Publish</button>
+                              </div>
+                          </section>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+      </body>
+      
+      </html>
+      
+      
+      
+      <!DOCTYPE html>
+      <html>
+      
+      <head>
+          <title>third Creation Page</title>
+          <link rel="stylesheet" href="/css/page3.css">
+      </head>
+      
+      <body>
+              <div class="loginPopup3">
+                  <div class="formPopup3" id="popupForm3">
+                      <div class="demo3">
+                          <button type="button" class="cls_btn3" onclick="closeForm3()"><img src="/Images/close.png"/></button>
+                      </div>
+      
+                      <div class="formContainer3">
+                          <section class="sec1_3">
+                                  <label class="ide3">Is The Event :</label>
+                                  <div class="boxes3">
+                                      <input type="checkbox" value="Inside" id="i"> <label for="i"> Inside the Campus</label>
+                                      <input type="checkbox" value="Outside" id="o"><label for="o"> Outside the Campus</label>
+                                  </div>                            
+                              <div class="div-btn3">
+                                  <button class="next-button3" onclick="openForm4()">Next</button>
+                              </div>
+                          </section>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+      </body>
+      
+      </html>
+      
+      
+      <!DOCTYPE html>
+      <html>
+      
+      <head>
+          <title>Event Creation Page</title>
+          <link rel="stylesheet" href="/css/page4.css">
+      </head>
+      
+      <body>
+      
+          <div class="loginPopup4">
+              <div class="formPopup4" id="popupForm4">
+                  <div class="demo4">
+                      <button type="button" class="cls_btn4" onclick="closeForm4()"><img src="/Images/close.png"/></button>
+      
+                  </div>
+                  <section>
+                  <div class="formContainer4">
+                          <div class="section2">
+                              <label for="State">State:</label>
+                              <input type="text" id="State" placeholder="Choose your State..">
+                              <label for="Place Name">Place Name:</label>
+                              <input type="text" id="Place Name" placeholder="Write the place name..">
+                              <label for="loc-link">Location Link:</label>
+                              <input type="text" id="loc-link" placeholder="Link google maps">
+                              <label for="loc-desc">Location Description (Optional):</label>
+                              <input type="text" id="loc-desc" placeholder="Describe the Location ..">
+                          </div>
+                          <div class="div-btn4">
+                              <button class="Publish-btn4">Publish</button>
+      
+                          </div>
+                      </div>
+              </section>
+              </div>
+          </div>
+          <script>
+              
+          </script>
+      
+      </body>
+      
+      </html>
+      
+      
+          <script>
+              function openForm() {
+                  document.getElementById("popupForm").style.display = "block";
+              }
+              function closeForm() {
+                  document.getElementById("popupForm").style.display = "none";
+              }
+              function openForm2() {
+                  if(document.getElementById("event-type").value=="V"){
+                  document.getElementById("popupForm2").style.display = "block";
+                  document.getElementById("popupForm").style.display = "none";
+                  }else{
+                  document.getElementById("popupForm3").style.display = "block";
+                  document.getElementById("popupForm").style.display = "none";
+                  }
+              }
+              function closeForm2() {
+                  document.getElementById("popupForm2").style.display = "none";
+              }
+              function openForm3() {
+                  document.getElementById("popupForm3").style.display = "block";
+              }
+              function closeForm3() {
+                  document.getElementById("popupForm3").style.display = "none";
+              }
+              function openForm4() {
+                  document.getElementById("popupForm4").style.display = "block";
+                  document.getElementById("popupForm3").style.display = "none";
+              }
+              function closeForm4() {
+                  document.getElementById("popupForm4").style.display = "none";
+              }
+          </script>
+      
+      </body>
+      
+      </html>
+
+    <div class="content">
+         <div class="space text">
+            Content
+
+
+            <div class="Popular-events">
+                Popular Events
+            </div>
+            
+            <div class="Artistic">
+                Artistic Events
+            </div>
+         </div>
+      </div>
+      <script>
+         const menuBtn = document.querySelector(".menu-icon span");
+         const searchBtn = document.querySelector(".search-icon");
+         const cancelBtn = document.querySelector(".cancel-icon");
+         const items = document.querySelector(".nav-items");
+         const form = document.querySelector("form");
+         menuBtn.onclick = ()=>{
+           items.classList.add("active");
+           menuBtn.classList.add("hide");
+           searchBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+         cancelBtn.onclick = ()=>{
+           items.classList.remove("active");
+           menuBtn.classList.remove("hide");
+           searchBtn.classList.remove("hide");
+           cancelBtn.classList.remove("show");
+           form.classList.remove("active");
+           cancelBtn.style.color = "#ff3d00";
+         }
+         searchBtn.onclick = ()=>{
+           form.classList.add("active");
+           searchBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+      </script>
+   </body>
+</html>
