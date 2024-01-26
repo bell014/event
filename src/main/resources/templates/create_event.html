@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/page4.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="/js/create_event.js"></script>
 </head>
 <body onload="openForm()">
 
@@ -103,7 +104,7 @@
 
                 </div>
                 <div class="div-btn">
-                    <input  type="button"  value="Next" class="next-button" onclick="validateForm()">
+                    <input  type="button"  value="Next" class="next-button" onclick="verif1()">
                 </div>
             </section>
         </div>
@@ -127,7 +128,7 @@
                 <label for="link">Put the Link:</label>
                 <input type="text" placeholder="Link.." id="link"  th:field="${eventDto.link}">
                 <div class="div-btn2">
-                    <button TYPE="submit" class="Publish-btn2" onclick="">Publish</button>
+                    <button TYPE="submit" class="Publish-btn2" onclick="return verif2()">Publish</button>
                 </div>
             </section>
         </div>
@@ -153,7 +154,7 @@
 
                 </div>
                 <div class="div-btn3">
-                    <input  type="button"  value="Next" class="next-button3" onclick="openForm4()">
+                    <input  type="button"  value="Next" class="next-button3" onclick="return verif3()">
                 </div>
             </section>
         </div>
@@ -179,7 +180,7 @@
                     <input type="text" id="loc-desc" placeholder="Describe the Location .." th:field="${eventDto.Location_description}">
                 </div>
                 <div class="div-btn4">
-                    <button type="submit" class="Publish-btn4" >Publish</button>
+                    <button type="submit" class="Publish-btn4"  onclick="return verif4()">Publish</button>
                 </div>
             </div>
         </section>
@@ -187,109 +188,6 @@
 </div>
 </form>
 
-<script>
-    function openForm() {
-        document.getElementById("popupForm").style.display = "block";
-        document.getElementById("popupForm2").style.display = "none";
-        document.getElementById("popupForm3").style.display = "none";
-        document.getElementById("popupForm4").style.display = "none";
-    }
-    function closeForm() {
-        document.getElementById("popupForm").style.display = "none";
-    }
-    function openForm2() {
-        if(document.getElementById("event-type").value=="false"){
-        document.getElementById("popupForm2").style.display = "block";
-        document.getElementById("popupForm").style.display = "none";
-        }else{
-        document.getElementById("popupForm3").style.display = "block";
-        document.getElementById("popupForm").style.display = "none";
-        }
-    }
-    function closeForm2() {
-        document.getElementById("popupForm2").style.display = "none";
-    }
-    function openForm3() {
-        document.getElementById("popupForm3").style.display = "block";
-    }
-    function closeForm3() {
-        document.getElementById("popupForm3").style.display = "none";
-    }
-    function openForm4() {
-        document.getElementById("popupForm4").style.display = "block";
-        document.getElementById("popupForm3").style.display = "none";
-    }
-    function closeForm4() {
-        document.getElementById("popupForm4").style.display = "none";
-    }
-</script>
-
-<script>
-    function validateForm() {
-        // Page 1 fields
-        var eventName = document.getElementById('event-name').value;
-        var startDate = document.getElementById('start-date').value;
-        var startTime = document.getElementById('start-time').value;
-        var eventDescription = document.getElementById('event-description').value;
-
-        // Check if any of the required fields are empty
-        if (
-            eventName === "" || startDate === "" || startTime === "" || category === "" || eventDescription === ""
-        ) {
-            alert("Please fill in all required fields");
-            return false;
-        }
-        openForm2() ;
-        return true  ;
-    }
-</script>
-
-<script>
-    function validateForm2() {
-        // Page 2 fields
-        var app = document.getElementById('app').value;
-        var link = document.getElementById('link').value;
-
-        // Check if any of the required fields are empty
-        if (app === "" || link === "") {
-            alert("Please fill in all required fields on Page 2");
-            return false;
-        }
-
-        return true;
-    }
-</script>
-
-
-<script>
-    const menuBtn = document.querySelector(".menu-icon span");
-    const searchBtn = document.querySelector(".search-icon");
-    const cancelBtn = document.querySelector(".cancel-icon");
-    const items = document.querySelector(".nav-items");
-    const form = document.querySelector("form");
-
-    menuBtn.onclick = () => {
-        items.classList.add("active");
-        menuBtn.classList.add("hide");
-        searchBtn.classList.add("hide");
-        cancelBtn.classList.add("show");
-    };
-
-    cancelBtn.onclick = () => {
-        items.classList.remove("active");
-        menuBtn.classList.remove("hide");
-        searchBtn.classList.remove("hide");
-        cancelBtn.classList.remove("show");
-        form.classList.remove("active");
-        cancelBtn.style.color = "#ff3d00";
-    };
-
-    searchBtn.onclick = () => {
-        form.classList.add("active");
-        searchBtn.classList.add("hide");
-        cancelBtn.classList.add("show");
-    };
-</script>
 
 </body>
 </html>
