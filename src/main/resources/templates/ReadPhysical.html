@@ -115,16 +115,19 @@
 
                     </div>
                     <div id="nameevP"class="nameev">
-                        <p class="ev-name" id="editNAME">EVENT NAME</p><button type="submit"  class="ed" id="edit-button3"><img src="/Images/edit.png"></button>
+                        <input type="text" class="ev-name" id="editNAME" readonly th:value="${event.eventName}">
+                        <button type="submit"  class="ed" id="edit-button3"><img src="/Images/edit.png">
+                        </button>
                     </div>
 
                     <table class="ev-detailsp">
                         <tr>
-                            <td >
-                                <label >Category:<p th:text="${event.category}"> </p></label >
+                            <td>
+                                <label >Category:</label>
                             </td>
                             <td id="n1P" class="n1">
-                                <p class="edit" id="editState">State</p><button type="submit" id="edit-button" class="ed"  ><img src="/Images/edit.png"></button>
+                                <input type="text" class="edit" id="editState"   th:value="${event.state}">
+                                <button type="submit"  class="ed" id="edit-button"><img src="/Images/edit.png"></button>
 
                             </td>
                         </tr>
@@ -132,11 +135,12 @@
                             <td>
                                 <p >Physical</p>
                                 <p >Event Description</p>
-                                <p th:text="${event.Location_description}"></p>
                             </td>
                             <th>
-                                <div class="layere2p">
-                                    <p class="edit" id="editPlace">google map</p><button   class="ed" id="edit-button2"><img src="/Images/edit.png"></button></div>
+                                <div id="layere2" class="layere2p">
+                                    <input type="text" class="edit" id="editPlace" readonly th:value="${event.Place_name}">
+                                    <button   class="ed" id="edit-button2"><img src="/Images/edit.png"></button>
+                                </div>
                                 <div class="google-img">
                                     <img src="/Images/im1.png" class="ggmps">
                                 </div>
@@ -187,44 +191,43 @@
     var end_button3 = document.getElementById("nameevP");
 
     edit_button.addEventListener("click", function() {
-    paragraph.contentEditable = true;
-    paragraph.style.backgroundColor = "#dddbdb";
+        document.getElementById('editState').readOnly = false;
+        paragraph.style.backgroundColor = "#dddbdb";
     } );
 
     document.addEventListener('mouseup', function(e) {
     if (!end_button.contains(e.target)) {
-        paragraph.contentEditable = false;
+        document.getElementById('editState').readOnly = true;
         paragraph.style.backgroundColor = "#fff";
     }
     });
 
     edit_button2.addEventListener("click", function() {
-    paragraph2.contentEditable = true;
-    paragraph2.style.backgroundColor = "#dddbdb";
+        document.getElementById('editPlace').readOnly = false;
+        paragraph2.style.backgroundColor = "#dddbdb";
     } );
 
     document.addEventListener('mouseup', function(e) {
     if (!end_button2.contains(e.target)) {
-        paragraph2.contentEditable = false;
-    paragraph2.style.backgroundColor = "#fff";
+        document.getElementById('editPlace').readOnly = true;
+        paragraph2.style.backgroundColor = "#fff";
     }
     });
 
     edit_button3.addEventListener("click", function() {
-    paragraph3.contentEditable = true;
-    paragraph3.style.backgroundColor = "#dddbdb";
+        document.getElementById('editNAME').readOnly = false;
+        paragraph3.style.backgroundColor = "#dddbdb";
     } );
 
 
     document.addEventListener('mouseup', function(e) {
     if (!end_button3.contains(e.target)) {
-        paragraph3.contentEditable = false;
+        document.getElementById('editNAME').readOnly = true;
         paragraph3.style.backgroundColor = "#fff";
     }
     });
 
 </script>
-
 </body>
 
 </html>

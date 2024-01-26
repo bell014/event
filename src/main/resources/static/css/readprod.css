@@ -181,13 +181,21 @@ body {
     height: 20px;
   }
 /*Event Name*/
-  .nameev {
+  .nameev  {
     display: flex;
     align-items: baseline;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    max-width: 300px;
+    
+  }
+  .nameev input {
+    display: flex;
+    align-items: baseline;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 200px;
     border: 0;
     background-color: #fff;
     font-size: 25px;
@@ -266,8 +274,8 @@ body {
     height: 48px;
     width: 250px;
   }
-  .layere2v a{
-    text-decoration: none;
+  .layere2v input{
+    text-align: center;
     max-width: 200px;
     max-height: 20px ;
     overflow: hidden;

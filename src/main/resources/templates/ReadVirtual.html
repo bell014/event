@@ -111,40 +111,37 @@
 
 
                     </div>
-                    <div class="nameev" id="nameev1">
-                        <input class="ev-name"  id="editNAME" th:value="${event.eventName}" />
-                        <button  class="ed" id="edit-button3">
-                            <img src="/Images/edit.png">
-                        </button>
+                    <div id="nameev1"class="nameev">
+                        <input type="text" class="ev-name" id="editNAME"  th:value="${event.eventName}">
+                        <button  class="ed" id="edit-button3"><img src="/Images/edit.png"></button>
                     </div>
 
                     <table class="ev-detailsv">
                         <tr>
                             <td>
-                                <label >Category:<p th:text="${event.category}"> </p></label >
+                                <label >Category:</label>
                             </td>
-                            <td  class="n1" id="n11">
-                                <label>We Will meet in</label>
-                                <input class="edit" id="editAPP" th:value="${event.app}" />
-                                <button  class="ed" id="edit-button">
-                                    <img src="/Images/edit.png">
-                                </button>
+                            <td id="n11" class="n1">
+                                <label >We Will meet in</label>
+                                <input type="text" class="edit" id="editAPP" th:value="${event.app}">
+                                <button   class="ed" id="edit-button"><img src="/Images/edit.png"></button>
+
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <p >Virtual</p>
                                 <p >Event Description</p>
-                                <p th:text="${event.Location_description}"></p>
                             </td>
                             <th>
 
                                 <div class="layere1"><label >App Link</label></div>
-                                <div  class="layere2"><input  class="edit" id="editLink"  th:value="${event.link}" />  <button  class="ed" id="edit-button2">
-                                    <img src="/Images/edit.png">
-                                </button>
+                                <div id="layere2" class="layere2v">
+                                    <input type="text" class="edit" id="editLink"  th:value="${event.link}">
+                                    <button type="submit"  class="ed" id="edit-button2"><img src="/Images/edit.png"></button>
                                 </div>
                             </th>
+
                         </tr>
 
 
@@ -190,38 +187,38 @@
         var end_button3 = document.getElementById("nameev1");
 
         edit_button.addEventListener("click", function() {
-        paragraph.contentEditable = true;
+            document.getElementById('editAPP').readOnly = false;
         paragraph.style.backgroundColor = "#dddbdb";
         } );
 
         document.addEventListener('mouseup', function(e) {
         if (!end_button.contains(e.target)) {
-            paragraph.contentEditable = false;
+            document.getElementById('editAPP').readOnly = true;
             paragraph.style.backgroundColor = "#fff";
         }
         });
 
         edit_button2.addEventListener("click", function() {
-        paragraph2.contentEditable = true;
+            document.getElementById('editLink').readOnly = false;
         paragraph2.style.backgroundColor = "#dddbdb";
         } );
 
         document.addEventListener('mouseup', function(e) {
         if (!end_button2.contains(e.target)) {
-            paragraph2.contentEditable = false;
+            document.getElementById('editLink').readOnly = true;
         paragraph2.style.backgroundColor = "#fff";
         }
         });
 
         edit_button3.addEventListener("click", function() {
-        paragraph3.contentEditable = true;
+            document.getElementById('editNAME').readOnly = false;
         paragraph3.style.backgroundColor = "#dddbdb";
         } );
 
 
         document.addEventListener('mouseup', function(e) {
         if (!end_button3.contains(e.target)) {
-            paragraph3.contentEditable = false;
+            document.getElementById('editNAME').readOnly = true;
             paragraph3.style.backgroundColor = "#fff";
         }
         });
