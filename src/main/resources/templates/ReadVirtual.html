@@ -1,90 +1,219 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 
-    <head>
-        <title>read event</title>
-        <link rel="stylesheet" href="/Css/readprod.css">
-    </head>
+<head>
+    <title>read event</title>
+    <link rel="stylesheet" href="/Css/readprod.css">
+</head>
 
-    <body onload="openForm()">
-
-
-        <div class="readPopup">
-            <div class="formPopup" id="popupForm">
-                <div class="demo">
-                    <a href="/events" class="cls_btn"><img src="/Images/close.png"/></a>
-
-                </div>
-
-                <div class="formContainer">
-                    <div class="Newevent">
-                        <a href="/events/create" class="newevent-btn"><strong>+ Create New Event</strong></a>
-                    </div>
-                    <section class="cover-picture">
-                        <div class="container-row">
-                            <div class="layer1">
-                                <img th:src="@{'/uploaded_images/' + ${event.coverPicture}}" class="bg">
-                            </div>
-                        </div>
-
-                        <div class="section2">
-                            <div class="start-date-time">
-                                <div class="startdate">
-                                    <img src="/Images/date.png" id="dt" class="dt">
-                                    <h3 th:text="${event.startDate}"></h3>
-                                    <h2>&ensp;</h2>
-                                    <h4 th:text="${event.startTime}"></h4>
-                                </div>
-
-                                
-                            </div>
-                            <div id="nameev"class="nameev">
-                                <p class="ev-name" id="edit3"  th:text="${event.eventName}"> </p>
-                            </div>
-
-                            <table class="ev-details">
-                                <tr>
-                                    <td>
-                                        <label >Category:<p th:text="${event.category}"> </p></label >
-                                    </td>
-                                    <td id="n1" class="n1">
-                                        <label id="end-editing">We Will meet in</label><p class="edit" id="edit" th:text="${event.app}"></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p id="Category">Virtual</p>
-                                        <p >Event Description :</p>
-                                        <p th:text="${event.Location_description}"></p>
-                                    </td>
-                                    <th>
-                                        
-                                        <div class="layere1"><label >App Link</label></div>
-                                        <div id="layere2" class="layere2"><a href="" class="edit" id="edit2" th:text="${event.link}"></a>
-                                    </th>
-                                </tr>
+<body onload="openFormup()">
 
 
-                            </table>
+<div class="readPopup">
+    <div class="formPopup" id="popupForm">
+        <div class="demo">
+            <a href="/events" class="cls_btn"><img src="/Images/close.png"/></a>
 
-                        </div>
-                        <div class="div-btn">
-                            <button class="participate-button">Participate</button>
-                        </div>
-                    </section>
-                </div>
-            </div>
         </div>
-        <script>
-            function openForm() {
-                document.getElementById("popupForm").style.display = "block";
-            }
-            function closeForm() {
-                document.getElementById("popupForm").style.display = "none";
-            }
-            
-        </script>
 
-    </body>
+        <div class="formContainer">
+            <div class="Newevent">
+                <a href="/events/create" class="newevent-btn"><strong>+ Create New Event</strong></a>
+            </div>
+            <section class="cover-picture">
+                <div class="container-row">
+                    <div class="layer1">
+                        <img th:src="@{'/uploaded_images/' + ${event.coverPicture}}" class="bg">
+                    </div>
+                </div>
 
-    </html>     
+                <div class="section2">
+                    <div class="start-date-time">
+                        <div class="startdate">
+                            <img src="/Images/date.png" id="dt" class="dt">
+                            <h3 th:text="${event.startDate}"></h3>
+                            <h2>&ensp;</h2>
+                            <h4 th:text="${event.startTime}"></h4>
+                        </div>
+
+
+                    </div>
+                    <div id="nameev"class="nameev">
+                        <p class="ev-name" id="edit3"  th:text="${event.eventName}"> </p>
+                    </div>
+
+                    <table class="ev-details">
+                        <tr>
+                            <td>
+                                <label >Category:<p th:text="${event.category}"> </p></label >
+                            </td>
+                            <td id="n1" class="n1">
+                                <label id="end-editing">We Will meet in</label><p class="edit"  th:text="${event.app}"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p id="Category">Virtual</p>
+                                <p id="desc">Event Description</p>
+                                <p th:text="${event.Location_description}"></p>
+                            </td>
+                            <th>
+
+                                <div class="layere1"><label >App Link</label></div>
+                                <div id="layere2" class="layere2"><a href="" class="edit" id="edit2" th:text="${event.link}"></a>
+                            </th>
+                        </tr>
+
+
+                    </table>
+
+                </div>
+                <div class="div-btn">
+                    <button class="participate-button">Participate</button>
+                    <button onclick="OpeneditV()" class="edit-button">Edit</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="VirtualPopup">
+    <div class="popupeditV" id="popupEditV">
+        <div class="demo">
+            <a href="/events" class="cls_btn"><img src="/Images/close.png"/></a>
+
+        </div>
+
+        <div class="formContainer">
+            <div class="Newevent">
+                <a href="/events/create" class="newevent-btn"><strong>+ Create New Event</strong></a>
+            </div>
+            <section class="cover-picture">
+                <div class="container-row">
+                    <div class="layer1">
+                        <img th:src="@{'/uploaded_images/' + ${event.coverPicture}}" class="bg">
+                    </div>
+                </div>
+
+                <div class="section2">
+                    <div class="start-date-time">
+                        <div class="startdate">
+                            <img src="/Images/date.png"  class="dt">
+                            <h3 th:text="${event.startDate}"></h3>
+                            <h2>&ensp;</h2>
+                            <h4 th:text="${event.startTime}"></h4>
+                        </div>
+
+
+                    </div>
+                    <div class="nameev">
+                        <p class="ev-name"  th:text="${event.eventName}"> </p>
+                    </div>
+
+                    <table class="ev-detailsv">
+                        <tr>
+                            <td>
+                                <label >Category:<p th:text="${event.category}"> </p></label >
+                            </td>
+                            <td  class="n1">
+                                <label >We Will meet in</label><p class="edit" id="edit" th:text="${event.app}"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p >Virtual</p>
+                                <p >Event Description</p>
+                                <p th:text="${event.Location_description}"></p>
+                            </td>
+                            <th>
+
+                                <div class="layere1"><label >App Link</label></div>
+                                <div  class="layere2"><a href="" class="edit"  th:text="${event.link}"></a>
+                            </th>
+                        </tr>
+
+
+                    </table>
+                    <h4>Organized By Club Name</h4>
+                </div>
+                <div class="div-btn">
+                    <button class="next-button">Update</button>
+                    <button class="del-button">Delete</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    function openFormup() {
+        document.getElementById("popupForm").style.display = "block";
+        document.getElementById("popupEditV").style.display = "none";
+
+    }
+    function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+    }
+     function OpeneditV () {
+        document.getElementById("popupForm").style.display = "none";
+        document.getElementById("popupEditV").style.display = "block";
+    }
+    function CloseeditV() {
+        document.getElementById("popupEditV").style.display = "none";
+    }
+        const paragraph = document.getElementById("editAPP");
+        const paragraph2 = document.getElementById("editLink");
+        const paragraph3 = document.getElementById("editNAME");
+        const edit_button = document.getElementById("edit-button");
+        const edit_button2 = document.getElementById("edit-button2");
+        const edit_button3 = document.getElementById("edit-button3");
+        var end_button = document.getElementById("n11");
+        var end_button2 = document.getElementById("editLink");
+        var end_button3 = document.getElementById("nameev1");
+
+        edit_button.addEventListener("click", function() {
+        paragraph.contentEditable = true;
+        paragraph.style.backgroundColor = "#dddbdb";
+        } );
+
+        document.addEventListener('mouseup', function(e) {
+        if (!end_button.contains(e.target)) {
+            paragraph.contentEditable = false;
+            paragraph.style.backgroundColor = "#fff";
+        }
+        });
+
+        edit_button2.addEventListener("click", function() {
+        paragraph2.contentEditable = true;
+        paragraph2.style.backgroundColor = "#dddbdb";
+        } );
+
+        document.addEventListener('mouseup', function(e) {
+        if (!end_button2.contains(e.target)) {
+            paragraph2.contentEditable = false;
+        paragraph2.style.backgroundColor = "#fff";
+        }
+        });
+
+        edit_button3.addEventListener("click", function() {
+        paragraph3.contentEditable = true;
+        paragraph3.style.backgroundColor = "#dddbdb";
+        } );
+
+
+        document.addEventListener('mouseup', function(e) {
+        if (!end_button3.contains(e.target)) {
+            paragraph3.contentEditable = false;
+            paragraph3.style.backgroundColor = "#fff";
+        }
+        });
+</script>
+
+</body>
+
+</html>

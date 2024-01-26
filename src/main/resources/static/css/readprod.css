@@ -12,6 +12,7 @@ body {
     margin-bottom: 30px;
   }
 
+  
   .formPopup {
     
     overflow: hidden;
@@ -30,6 +31,38 @@ body {
     padding: 10px;
     background-color: #fff;
   }
+
+/*Virtual pop up edit*/
+  .popupeditV {
+    
+    overflow: hidden;
+    display: none;
+        position: absolute;
+        left: 45%;
+        top: 5%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+  }
+  
+  .formContainerV {
+    margin-left: 30px;
+    width: 500px;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  /*edit icon*/
+  .ed {
+    background-color: transparent;
+    border: 0;
+  }
+  .ed img{
+    height: 20px;
+  }
+  
+  
+
   /*Close Button Style*/
   .demo{
     position: relative;
@@ -166,6 +199,12 @@ body {
   .ev-details{
     padding-top: 1%;
   }
+  
+  .ev-detailsv input{
+    width:100px;
+    border: 0;
+    background-color: #fff;
+  }
   .ev-details input{
     width:100px;
     border: 0;
@@ -218,6 +257,21 @@ body {
     overflow: hidden;
   }
   
+  .layere2v{
+    align-items: baseline;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: inline-flex; 
+    height: 48px;
+    width: 250px;
+  }
+  .layere2v a{
+    text-decoration: none;
+    max-width: 200px;
+    max-height: 20px ;
+    overflow: hidden;
+  }
   /*Participate button customization*/
   .participate-button {
     font-size: 18px;
@@ -230,6 +284,40 @@ body {
     text-size-adjust: 18px ;
   justify-content: center;}
   
+  .edit-button{
+    font-size: 18px;
+    background-color: #37b804;
+    color: white;
+    margin-left: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    text-size-adjust: 18px ;
+  justify-content: center;
+  }
+  .del-button{
+    font-size: 18px;
+    background-color: #b80404;
+    color: white;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    text-size-adjust: 18px ;
+  justify-content: center;
+  }
+  .next-button {
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    text-size-adjust: 18px ;
+  justify-content: center;}
   
 
   

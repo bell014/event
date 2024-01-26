@@ -13,7 +13,24 @@ body {
   }
 
   .formPopup {
-    
+    overflow: hidden;
+    display: block;
+        position: absolute;
+        left: 45%;
+        top: 5%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+  }
+  
+  .formContainer {
+    width: 500px;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  /*Physical pop up edit*/
+  .popupeditP {
     overflow: hidden;
     display: none;
         position: absolute;
@@ -24,12 +41,13 @@ body {
     z-index: 9;
   }
   
-  .formContainer {
-    margin-left: 30px;
+  .formContainerP {
     width: 500px;
     padding: 10px;
     background-color: #fff;
   }
+
+
   /*Close Button Style*/
   .demo{
     position: relative;
@@ -102,18 +120,23 @@ body {
     display: block;
     margin-bottom: 5px;
   }
-  
-  .readPopup input{
-    resize: none;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
+  .popupeditP label {
+    font-weight: bold;
+    color:#02366d;
+    display: block;
+    margin-bottom: 5px;
   }
   
   
+  
+    /*edit icon*/
+    .ed {
+      background-color: transparent;
+      border: 0;
+    }
+    .ed img{
+      height: 20px;
+    }
   
   /*open form button*/
   .openBtn {
@@ -171,6 +194,14 @@ body {
     border: 0;
     background-color: #fff;
   }
+  .ev-detailsp input{
+    width:100px;
+    border: 0;
+    background-color: #fff;
+  }
+  .ev-detailsp{
+    padding-top: 1%;
+  }
   /*Table Style and customization*/ 
   td{
     display:table-cell;
@@ -204,12 +235,27 @@ body {
   
   .layere2{
     align-items: baseline;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    display: inline-flex;
+    height: 48px;
+    width: 250px;
+    justify-content: center;
+  }
+
+  .layere2p{
+    align-items: baseline;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
     display: inline-flex; 
     height: 48px;
     width: 250px;
+  }
+
+  .google-img img{
+    height: 100px;
+    width: 200px;
   }
   /*Participate button customization*/
   .participate-button {
@@ -221,9 +267,45 @@ body {
     cursor: pointer;
     border-radius: 25px;
     text-size-adjust: 18px ;
-  justify-content: center;}
+  justify-content: center;
+}
+.edit-button{
+  font-size: 18px;
+  background-color: #37b804;
+  color: white;
+  margin-left: 20px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  text-size-adjust: 18px ;
+justify-content: center;
+}
   
-  
+.del-button{
+  font-size: 18px;
+  background-color: #b80404;
+  color: white;
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  text-size-adjust: 18px ;
+justify-content: center;
+}
+.next-button {
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  text-size-adjust: 18px ;
+justify-content: center;}
+
+
 
   
 

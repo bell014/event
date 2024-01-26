@@ -97,9 +97,27 @@ public class EventController {
 
 event_service.saveEvent(event);
 
-        return "create_event";
+        return "redirect:/events";
     }
 
+
+    @PostMapping("/events/update/{id}")
+    public String updateEvent(@PathVariable(value = "id") long id, @ModelAttribute Event  event) {
+
+        // Fetch the existing employee to update
+        Event existingEvent = event_service.getEventById(id);
+
+        // Update the employee's properties with the new values
+        existingEvent.setEventName(event.getEventName()); // Example: Update name
+        existingEvent.setState(event.getState());
+        // Example: Update email
+        // ... update other properties as needed
+
+        // Call the service to save the updated employee
+        event_service.saveEvent(existingEvent);
+        // Redirect to a success page or display a success message
+        return "/events"; // Example redirect
+    }
 
 
     @GetMapping("/details/{id}")
@@ -126,7 +144,7 @@ event_service.saveEvent(event);
 
         // call delete event method
         this.event_service.deleteEventById(id);
-        return "redirect:/";
+        return "redirect:/events" ;
     }
 
 }
