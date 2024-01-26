@@ -36,8 +36,6 @@ public class EventController {
         return "ListEvents";
     }
 
-
-
     @GetMapping("/create")
     public String showCreatePage (Model model) {
         EventDto eventDto = new EventDto ();

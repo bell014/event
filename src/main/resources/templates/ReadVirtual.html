@@ -32,23 +32,24 @@
                         <div class="startdate">
                             <img src="/Images/date.png" id="dt" class="dt">
                             <h3 th:text="${event.startDate}"></h3>
-                            <h2>&ensp;</h2>
+
                             <h4 th:text="${event.startTime}"></h4>
                         </div>
 
 
                     </div>
-                    <div id="nameev"class="nameev">
+                    <div id="nameev" class="nameev">
                         <p class="ev-name" id="edit3"  th:text="${event.eventName}"> </p>
                     </div>
-
                     <table class="ev-details">
                         <tr>
                             <td>
                                 <label >Category:<p th:text="${event.category}"> </p></label >
                             </td>
                             <td id="n1" class="n1">
-                                <label id="end-editing">We Will meet in</label><p class="edit"  th:text="${event.app}"></p>
+                                <label id="end-editing">We Will meet in :</label>
+                                &ensp;<p class="edit"  th:text="${event.app}"></p>
+
                             </td>
                         </tr>
                         <tr>
@@ -64,7 +65,7 @@
                                 </div>
 
                             </th>
-                <
+
                         </tr>
 
 
@@ -125,16 +126,16 @@
                                 <h4 th:text="${event.category}"></h4>
                             </td>
                             <td id="n11" class="n1">
-                                <label >We Will meet in</label>
-                                <input type="text" class="edit" id="editAPP" th:field="${event.app}">
+                                <label >We Will meet in :</label>
+                                &ensp;<input type="text" class="edit" id="editAPP" th:field="${event.app}">
                                 <button   type="button" class="ed" id="edit-button"><img src="/Images/edit.png"></button>
-
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <p >Virtual</p>
                                 <p >Event Description</p>
+                                <p th:text="${event.Location_description}"></p>
                             </td>
                             <th>
 
