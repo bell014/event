@@ -22,36 +22,23 @@
     </div>
     <div class="nav-items">
         <li><a href="/events">Home</a></li>
-        <li>
-            <div class="dropdown">
-                <button class="dropbtn">Category
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
+        <li><div class="dropdown">
+            <button class="dropbtn">Category
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Music</a>
+                <a href="#">Artistic</a>
             </div>
+        </div>
         </li>
-        <li>
-            <div class="dropdown">
-                <button class="dropbtn">Region
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-        </li>
-        <li><a href="#">Date</a></li>
-        <li>
-            <div class="openBtn">
-                <button class="openButton" onclick="openForm()"><strong>Create Event</strong></button>
-            </div>
-        </li>
+
+
+
+
+        <li><div class="openBtn">
+            <a class="openButton"  href="/events/create"><strong>Create Event</strong></a>
+        </div></li>
     </div>
     <div class="search-icon">
         <span class="fas fa-search"></span>
@@ -59,12 +46,11 @@
     <div class="cancel-icon">
         <span class="fas fa-times"></span>
     </div>
-
+    <form action="#">
         <input type="search" class="search-data" placeholder="Search" required>
         <button type="submit" class="fas fa-search"></button>
-
+    </form>
 </nav>
-
 <form action="/events/create" method="POST"  enctype="multipart/form-data" th:object="${eventDto}">
 <!-- Event Creation Page 1 -->
 <div class="loginPopup">
@@ -117,7 +103,7 @@
 
                 </div>
                 <div class="div-btn">
-                    <input  type="button"  value="Next" class="next-button" onclick="openForm2()">
+                    <input  type="button"  value="Next" class="next-button" onclick="validateForm()">
                 </div>
             </section>
         </div>
@@ -141,7 +127,7 @@
                 <label for="link">Put the Link:</label>
                 <input type="text" placeholder="Link.." id="link"  th:field="${eventDto.link}">
                 <div class="div-btn2">
-                    <button TYPE="submit" class="Publish-btn2">Publish</button>
+                    <button TYPE="submit" class="Publish-btn2" onclick="">Publish</button>
                 </div>
             </section>
         </div>
@@ -193,7 +179,7 @@
                     <input type="text" id="loc-desc" placeholder="Describe the Location .." th:field="${eventDto.Location_description}">
                 </div>
                 <div class="div-btn4">
-                    <button type="submit" class="Publish-btn4">Publish</button>
+                    <button type="submit" class="Publish-btn4" >Publish</button>
                 </div>
             </div>
         </section>
@@ -235,6 +221,42 @@
     }
     function closeForm4() {
         document.getElementById("popupForm4").style.display = "none";
+    }
+</script>
+
+<script>
+    function validateForm() {
+        // Page 1 fields
+        var eventName = document.getElementById('event-name').value;
+        var startDate = document.getElementById('start-date').value;
+        var startTime = document.getElementById('start-time').value;
+        var eventDescription = document.getElementById('event-description').value;
+
+        // Check if any of the required fields are empty
+        if (
+            eventName === "" || startDate === "" || startTime === "" || category === "" || eventDescription === ""
+        ) {
+            alert("Please fill in all required fields");
+            return false;
+        }
+        openForm2() ;
+        return true  ;
+    }
+</script>
+
+<script>
+    function validateForm2() {
+        // Page 2 fields
+        var app = document.getElementById('app').value;
+        var link = document.getElementById('link').value;
+
+        // Check if any of the required fields are empty
+        if (app === "" || link === "") {
+            alert("Please fill in all required fields on Page 2");
+            return false;
+        }
+
+        return true;
     }
 </script>
 

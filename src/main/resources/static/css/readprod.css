@@ -14,7 +14,6 @@ body {
 
   
   .formPopup {
-    
     overflow: hidden;
     display: none;
         position: absolute;
@@ -34,7 +33,6 @@ body {
 
 /*Virtual pop up edit*/
   .popupeditV {
-    
     overflow: hidden;
     display: none;
         position: absolute;
@@ -81,19 +79,21 @@ body {
     }
 
     /*NEW EVENT BTN CUSTOMIZATION*/
- .Newevent {
-       padding: 2%;
-       color: #02366d;
-     }
-     .Newevent a{
-     text-decoration: none;
-     background-color: transparent;
-     border: 0;
-     margin: 10%;
-     margin-left: 50px;
-     cursor: pointer;
-     color: #02366d;
-   }
+    .Newevent{
+    border: 0;
+    margin: 20px;
+    margin-left: 50px;
+    cursor: pointer;
+    color: #02366d;
+    }
+  .Newevent a {
+    font-size: 15px;
+    text-decoration: none;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: #02366d;
+  }
   
   h1 {
     font-size: 2rem;
@@ -158,11 +158,7 @@ body {
     display: flex;
     justify-content: left;
   }
-  
-  .readPopup {
-    position: absolute;
-    width: 100%;
-  }
+ 
   
 
 /*Event Time Details*/
@@ -178,7 +174,6 @@ body {
   }
   .startdate img{
     padding-right: 10px;
-    width:15% ;
   }
   .appdate{
     padding-left: 40px;
@@ -194,34 +189,39 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   font-size: 25px;
-    font-weight: bold;
-    color: #024892;
+  font-weight: bold;
+  color: #024892;
+  
 }
-  .nameev input {
-    display: flex;
-    align-items: baseline;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    width: 200px;
-    border: 0;
-    background-color: #fff;
-    font-size: 25px;
-    font-weight: bold;
-    color: #024892;
-  }
+.nameev input[type=text] {
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 200px;
+  border: 0;
+  background-color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  color: #024892;
+}
 
   /*Event Details*/
   .ev-details{
     padding-top: 1%;
+    overflow-y: auto;
+  }
+  .ev-details p {
+    font-size: 15px;
   }
   
-  .ev-detailsv input{
+  .ev-details input[type=text]{
     width:100px;
     border: 0;
     background-color: #fff;
   }
-  .ev-details input{
+  .ev-detailsv input[type=text]{
     width:100px;
     border: 0;
     background-color: #fff;
@@ -233,29 +233,30 @@ body {
     vertical-align:middle;
   }
   .desc p{
-        display: inherit;
-        width: 150px  ;
-        height: 20px;
+    display: inherit;
+    width: 150px  ;
+    height: 20px;
 
-      }
+  }
   .n1{
-    align-items: baseline;
-    justify-content: space-around;
+    display: inline-flex;
+    width: 100%;
     flex-wrap: wrap;
-    display: inline-flex; 
-    height: 50px;
-    width: 250px;
-    gap: 10px;
-    vertical-align:top;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: baseline;
   }
   
-  .n1 input {
+  .n1 input[type=text] {
     resize: none;
-    width: 30px;
+    width: 100px;
     height: 20px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
+    color: #024892;
   }
   
 
@@ -288,6 +289,17 @@ body {
     height: 48px;
     width: 250px;
   }
+  .layere2v input[type=text] {
+    resize: none;
+    width: 100px;
+    height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
+    color: #024892;
+  }
   .layere2v input{
     text-align: center;
     max-width: 200px;
@@ -319,7 +331,7 @@ body {
   justify-content: center;
   }
   .del-button{
-  text-decoration : none ;
+  text-decoration: none  ;
     font-size: 18px;
     background-color: #b80404;
     color: white;

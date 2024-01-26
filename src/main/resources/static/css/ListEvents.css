@@ -29,10 +29,15 @@ nav .nav-items{
   flex: 1;
   padding: 0 0 0 40px;
 }
+.openBtn a {
+color:black;
+
+}
 nav .nav-items li{
   list-style: none;
   padding: 0 15px;
 }
+
 nav .nav-items li a{
   color: #fff;
   font-size: 18px;
