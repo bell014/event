@@ -101,22 +101,28 @@ event_service.saveEvent(event);
     }
 
 
-    @PostMapping("/events/update/{id}")
-    public String updateEvent(@PathVariable(value = "id") long id, @ModelAttribute Event  event) {
+    @PostMapping("/update")
+    public String updateEvent( @ModelAttribute Event  event) {
 
+        long id1 = event.getId();
         // Fetch the existing employee to update
-        Event existingEvent = event_service.getEventById(id);
+        Event existingEvent = event_service.getEventById(id1);
 
-        // Update the employee's properties with the new values
-        existingEvent.setEventName(event.getEventName()); // Example: Update name
-        existingEvent.setState(event.getState());
-        // Example: Update email
-        // ... update other properties as needed
+
+        if (existingEvent.getPhysical() == true) {
+            existingEvent.setEventName(event.getEventName());
+            existingEvent.setState(event.getState());
+            existingEvent.setPlace_name(event.getPlace_name());
+        } else {
+            existingEvent.setEventName(event.getEventName());
+            existingEvent.setApp(event.getApp());
+            existingEvent.setLink(event.getLink());
+        }
 
         // Call the service to save the updated employee
         event_service.saveEvent(existingEvent);
         // Redirect to a success page or display a success message
-        return "/events"; // Example redirect
+        return "redirect:/events"; // Example redirect
     }
 
 

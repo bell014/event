@@ -64,7 +64,8 @@
                                 <div class="layere1"><label ></label></div>
                                 <div id="layere2" class="layere2"><h4 class="edit" id="edit2"> google map </h4>
                                     <div class="google-img">
-                                        <img src="/Images/im1.png" class="ggmps">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7457.320125612976!2d10.178563863572041!3d36.81844007444301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stn!4v1706267716945!5m2!1sen!2stn"  ></iframe>
+
                                     </div>
                                 </div>
                             </th>
@@ -109,25 +110,29 @@
                             <h2>&ensp;</h2>
                             <h4 th:text="${event.startTime}"></h4>
                         </div>
-                        <div class="appdate">
-                            <label class="appdate">Place Name</label>
-                        </div>
+
 
                     </div>
-                    <div id="nameevP"class="nameev">
-                        <input type="text" class="ev-name" id="editNAME" readonly th:value="${event.eventName}">
-                        <button type="submit"  class="ed" id="edit-button3"><img src="/Images/edit.png">
-                        </button>
+                    <form action="/events/update" method="POST"  th:object="${event}">
+                    <div id="nameevP" class="nameev">
+                            <input type="hidden" th:value="${event.id}"  th:field="${event.id} ">
+                            <input type="text" class="ev-name" id="editNAME"   th:field="${event.eventName}">
+                            <button  type="button" class="ed" id="edit-button3">
+                                <img src="/Images/edit.png">
+                            </button>
+
                     </div>
+
 
                     <table class="ev-detailsp">
                         <tr>
                             <td>
                                 <label >Category:</label>
+                                <h4 th:text="${event.category}"></h4>
                             </td>
                             <td id="n1P" class="n1">
-                                <input type="text" class="edit" id="editState"   th:value="${event.state}">
-                                <button type="submit"  class="ed" id="edit-button"><img src="/Images/edit.png"></button>
+                                <input type="text" class="edit" id="editState"  th:field="${event.state}">
+                                <button type="button" class="ed" id="edit-button"><img src="/Images/edit.png"></button>
 
                             </td>
                         </tr>
@@ -135,25 +140,29 @@
                             <td>
                                 <p >Physical</p>
                                 <p >Event Description</p>
+                                <p th:text="${event.Location_description}"></p>
+
                             </td>
                             <th>
+
                                 <div id="layere2" class="layere2p">
-                                    <input type="text" class="edit" id="editPlace" readonly th:value="${event.Place_name}">
-                                    <button   class="ed" id="edit-button2"><img src="/Images/edit.png"></button>
+                                    <input type="text" class="edit" id="editPlace"  th:field="${event.Place_name}">
+                                    <button type="button" class="ed" id="edit-button2"><img src="/Images/edit.png"></button>
                                 </div>
                                 <div class="google-img">
-                                    <img src="/Images/im1.png" class="ggmps">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7457.320125612976!2d10.178563863572041!3d36.81844007444301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stn!4v1706267716945!5m2!1sen!2stn"  ></iframe>
                                 </div>
                             </th>
                         </tr>
                     </table>
 
-                    <h4>Organized By Club Name</h4>
-                </div>
+
+
                 <div class="div-btn">
                     <button type="submit" class="next-button">Update</button>
                     <a th:href="@{/events/deleteEvent/{id}(id=${event.id})}" class="del-button">Delete</a>
                 </div>
+                    </form>
 
             </section>
         </div>

@@ -179,7 +179,7 @@ body {
   overflow: hidden;
   
 }
-.nameev input {
+.nameev input[type=text] {
   display: flex;
   align-items: baseline;
   white-space: nowrap;
@@ -197,12 +197,12 @@ body {
   .ev-details{
     padding-top: 1%;
   }
-  .ev-details input{
+  .ev-details input[type=text]{
     width:100px;
     border: 0;
     background-color: #fff;
   }
-  .ev-detailsp input{
+  .ev-detailsp input[type=text]{
     width:100px;
     border: 0;
     background-color: #fff;
@@ -227,7 +227,7 @@ body {
     vertical-align:top;
   }
   
-  .n1 input {
+  .n1 input[type=text] {
     resize: none;
     width: 100px;
     height: 20px;
@@ -263,7 +263,7 @@ body {
     height: 48px;
     width: 250px;
   }
-  .layere2p input {
+  .layere2p input[type=text] {
     resize: none;
     width: 100px;
     height: 20px;
@@ -275,7 +275,7 @@ body {
     color: #024892;
   }
 
-  .google-img img{
+  .google-img iframe{
     height: 100px;
     width: 200px;
   }

@@ -111,20 +111,23 @@
 
 
                     </div>
+                    <form action="/events/update" method="POST"  th:object="${event}">
                     <div id="nameev1"class="nameev">
-                        <input type="text" class="ev-name" id="editNAME"  th:value="${event.eventName}">
-                        <button  class="ed" id="edit-button3"><img src="/Images/edit.png"></button>
+                        <input type="hidden" th:value="${event.id}"  th:field="${event.id} ">
+                        <input type="text" class="ev-name" id="editNAME" th:field="${event.eventName}">
+                        <button type="button" class="ed" id="edit-button3"><img src="/Images/edit.png"></button>
                     </div>
 
                     <table class="ev-detailsv">
                         <tr>
                             <td>
                                 <label >Category:</label>
+                                <h4 th:text="${event.category}"></h4>
                             </td>
                             <td id="n11" class="n1">
                                 <label >We Will meet in</label>
-                                <input type="text" class="edit" id="editAPP" th:value="${event.app}">
-                                <button   class="ed" id="edit-button"><img src="/Images/edit.png"></button>
+                                <input type="text" class="edit" id="editAPP" th:field="${event.app}">
+                                <button   type="button" class="ed" id="edit-button"><img src="/Images/edit.png"></button>
 
                             </td>
                         </tr>
@@ -137,8 +140,8 @@
 
                                 <div class="layere1"><label >App Link</label></div>
                                 <div id="layere2" class="layere2v">
-                                    <input type="text" class="edit" id="editLink"  th:value="${event.link}">
-                                    <button type="submit"  class="ed" id="edit-button2"><img src="/Images/edit.png"></button>
+                                    <input type="text" class="edit" id="editLink"  th:field="${event.link}">
+                                    <button   type="button" class="ed" id="edit-button2"><img src="/Images/edit.png"></button>
                                 </div>
                             </th>
 
@@ -149,9 +152,10 @@
 
                 </div>
                 <div class="div-btn">
-                    <button class="next-button">Update</button>
+                    <button type="submit" class="next-button">Update</button>
                     <a th:href="@{/events/deleteEvent/{id}(id=${event.id})}" class="del-button">Delete</a>
                 </div>
+                </form>
             </section>
         </div>
     </div>
