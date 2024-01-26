@@ -81,14 +81,19 @@ body {
     }
 
     /*NEW EVENT BTN CUSTOMIZATION*/
-  .newevent-btn {
-    background-color: transparent;
-    border: 0;
-    margin: 20px;
-    margin-left: 50px;
-    cursor: pointer;
-    color: #02366d;
-  }
+ .Newevent {
+       padding: 2%;
+       color: #02366d;
+     }
+     .Newevent a{
+     text-decoration: none;
+     background-color: transparent;
+     border: 0;
+     margin: 10%;
+     margin-left: 50px;
+     cursor: pointer;
+     color: #02366d;
+   }
   
   h1 {
     font-size: 2rem;
@@ -173,6 +178,7 @@ body {
   }
   .startdate img{
     padding-right: 10px;
+    width:15% ;
   }
   .appdate{
     padding-left: 40px;
@@ -181,14 +187,16 @@ body {
     height: 20px;
   }
 /*Event Name*/
-  .nameev  {
-    display: flex;
-    align-items: baseline;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    
-  }
+.nameev  {
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 25px;
+    font-weight: bold;
+    color: #024892;
+}
   .nameev input {
     display: flex;
     align-items: baseline;
@@ -224,6 +232,12 @@ body {
     height: 10px;
     vertical-align:middle;
   }
+  .desc p{
+        display: inherit;
+        width: 150px  ;
+        height: 20px;
+
+      }
   .n1{
     align-items: baseline;
     justify-content: space-around;
@@ -305,6 +319,7 @@ body {
   justify-content: center;
   }
   .del-button{
+  text-decoration : none ;
     font-size: 18px;
     background-color: #b80404;
     color: white;

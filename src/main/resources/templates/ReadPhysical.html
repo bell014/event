@@ -43,17 +43,21 @@
 
                     <table class="ev-details">
                         <tr>
-                            <td >
-                                <label >Category:<p th:text="${event.category}"> </p></label >
+                            <td>
+                                <label >Category:</label>
+                                <h4 th:text="${event.category}"></h4>
                             </td>
                             <td id="n1" class="n1">
-                                <p class="edit" id="edit">State: <p th:text="${event.state}"></p></p>
+                                <p class="edit" id="edit">State:
+                                <h5 th:text="${event.state}"></h5>
+                                </p>
+
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <p id="Category">Physical</p>
-                                <p id="desc">Event Description :</p>
+                            <td class="desc">
+                               <div> <p id="Category">Physical</p></div>
+                               <div> <p id="desc">Event Description :</p></div>
                                 <p th:text="${event.eventDescription}"></p>
                             </td>
                             <th>
@@ -79,9 +83,11 @@
                     <button class="participate-button">Participate</button>
                     <button onclick="OpeneditP()" class="edit-button">Edit</button>
                 </div>
-            </section>
+        </section>
         </div>
+
     </div>
+
 </div>
 
 <div class="PhysicalPopup">

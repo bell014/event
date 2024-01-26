@@ -54,10 +54,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <p id="Category">Virtual</p>
-                                <p id="desc">Event Description</p>
-                                <p th:text="${event.eventDescription}"></p>
+                            <td class="desc">
+                                <div><p id="Category">Virtual</p></div>
+                               <div> <p id="desc" th:text="${event.eventDescription}"></p></div>
                             </td>
                             <th>
 
@@ -124,8 +123,7 @@
                     <table class="ev-detailsv">
                         <tr>
                             <td>
-                                <label >Category:</label>
-                                <h4 th:text="${event.category}"></h4>
+                                <label >Category:<p th:text="${event.category}"> </p></label >
                             </td>
                             <td id="n11" class="n1">
                                 <label >We Will meet in :</label>
