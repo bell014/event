@@ -66,6 +66,7 @@
                                     <div class="google-img">
                                         <img src="/Images/im1.png" class="ggmps">
                                     </div>
+                                </div>
                             </th>
                         </tr>
 
@@ -123,7 +124,7 @@
                                 <label >Category:<p th:text="${event.category}"> </p></label >
                             </td>
                             <td id="n1P" class="n1">
-                                <p class="edit" id="editState">State</p><button type="submit"  class="ed" id="edit-button"><img src="/Images/edit.png"></button>
+                                <p class="edit" id="editState">State</p><button type="submit" id="edit-button" class="ed"  ><img src="/Images/edit.png"></button>
 
                             </td>
                         </tr>
@@ -149,6 +150,7 @@
                     <button type="submit" class="next-button">Update</button>
                     <a th:href="@{/events/deleteEvent/{id}(id=${event.id})}" class="del-button">Delete</a>
                 </div>
+
             </section>
         </div>
     </div>

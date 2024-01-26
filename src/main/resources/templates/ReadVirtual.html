@@ -61,7 +61,10 @@
 
                                 <div class="layere1"><label >App Link</label></div>
                                 <div id="layere2" class="layere2"><a href="" class="edit" id="edit2" th:text="${event.link}"></a>
+                                </div>
+
                             </th>
+                <
                         </tr>
 
 
@@ -108,8 +111,11 @@
 
 
                     </div>
-                    <div class="nameev">
-                        <p class="ev-name"  th:text="${event.eventName}"> </p>
+                    <div class="nameev" id="nameev1">
+                        <input class="ev-name"  id="editNAME" th:value="${event.eventName}" />
+                        <button  class="ed" id="edit-button3">
+                            <img src="/Images/edit.png">
+                        </button>
                     </div>
 
                     <table class="ev-detailsv">
@@ -117,8 +123,12 @@
                             <td>
                                 <label >Category:<p th:text="${event.category}"> </p></label >
                             </td>
-                            <td  class="n1">
-                                <label >We Will meet in</label><p class="edit" id="edit" th:text="${event.app}"></p>
+                            <td  class="n1" id="n11">
+                                <label>We Will meet in</label>
+                                <input class="edit" id="editAPP" th:value="${event.app}" />
+                                <button  class="ed" id="edit-button">
+                                    <img src="/Images/edit.png">
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -130,17 +140,20 @@
                             <th>
 
                                 <div class="layere1"><label >App Link</label></div>
-                                <div  class="layere2"><a href="" class="edit"  th:text="${event.link}"></a>
+                                <div  class="layere2"><input  class="edit" id="editLink"  th:value="${event.link}" />  <button  class="ed" id="edit-button2">
+                                    <img src="/Images/edit.png">
+                                </button>
+                                </div>
                             </th>
                         </tr>
 
 
                     </table>
-                    <h4>Organized By Club Name</h4>
+
                 </div>
                 <div class="div-btn">
                     <button class="next-button">Update</button>
-                    <button class="del-button">Delete</button>
+                    <a th:href="@{/events/deleteEvent/{id}(id=${event.id})}" class="del-button">Delete</a>
                 </div>
             </section>
         </div>
