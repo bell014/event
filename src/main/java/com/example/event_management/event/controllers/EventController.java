@@ -103,7 +103,7 @@ event_service.saveEvent(event);
     public String updateEvent( @ModelAttribute Event  event) {
 
         long id1 = event.getId();
-        // Fetch the existing employee to update
+        // Fetch the existing events to update
         Event existingEvent = event_service.getEventById(id1);
 
 
@@ -117,25 +117,25 @@ event_service.saveEvent(event);
             existingEvent.setLink(event.getLink());
         }
 
-        // Call the service to save the updated employee
+        // Call the service to save the updated event
         event_service.saveEvent(existingEvent);
         // Redirect to a success page or display a success message
-        return "redirect:/events"; // Example redirect
+        return "redirect:/events";
     }
 
 
     @GetMapping("/details/{id}")
     public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
 
-        // get employee from the service
+        // get event from the service
         Event event = event_service.getEventById(id);
 
-        // set employee as a model attribute to pre-populate the form
+        // set event as a model attribute to pre-populate the form
         model.addAttribute("event", event);
 
         if (event.getPhysical() == true) {
             return "ReadPhysical";
-        } else { // Closing brace added here
+        } else {
             return "ReadVirtual";
         }
     }
